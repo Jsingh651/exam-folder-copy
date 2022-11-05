@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Request</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>Request a Ride</h1>
+        <ul>
+            <h3 class="request"><a href="/dashboard">Home</a></h3>
+            <h3><a href="/logout">Logout</a></h3>
+        </ul>
+    </div>
+
+    <div class="form req-form ">
+        <form action="/create/ride" method="post">
+            <input type="hidden" name="rider_id" value="{{user.id}}">
+            <input class="fir" name="destination" type="text" autocomplete="off" placeholder=" Where To?" value="{{session['destination']}}">
+            <input name="pick_up" type="text" autocomplete="off" placeholder="Where From?" value="{{session['pick_up']}}">
+            <input type="date" name="created_at">
+            <textarea class="instru" name="details" placeholder="Instructions?">{{session['details']}}</textarea>
+            <div class="btn-div">
+                <input class="pswlbl3 pswlbl4" type="submit" value="SUBMIT">
+            </div>
+
+        </form>
+    </div>
+    <div class="move">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="error2">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>

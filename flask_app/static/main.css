@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&family=Quicksand:wght@400;600&family=Roboto:wght@400;700;900&display=swap');
+/* ---------------------- */
+body {
+font-family: 'Abril Fatface', cursive;
+font-size: 1.2rem;
+background-color: #060b23;
+color: white;
+}
+.title{
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+    color: white;
+    margin-top: 10px;
+}
+.main-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+.form{
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.formlogin{
+    margin-top: 120px;
+}
+input{
+    width: 320px;
+    border: 2px solid #e1e5ee;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    padding: 1.00rem;
+    background: none;
+    margin-bottom: 16px;
+}
+
+input:hover{
+    border-color:  #adffff;
+}
+input:focus{
+    border-color: #18ffff;
+}
+
+.pswlbl3{
+    width: 30%;
+    margin-left: 80px;
+    height: 20%;
+    background:none;
+    color: #ffffff;
+}
+
+.pswlbl3:hover{
+    cursor: pointer;
+}
+.pswlbl3:active{
+    position: relative;
+    top: 4px;
+}
+
+.error{
+    font-size: 16px;
+    color: white;
+    margin-left: 30px;
+    text-align: center;
+}
+.error-dav{
+    position: absolute;
+    top: 600px;
+    width: 100%;
+
+}
+.pswlbl2{
+    width: 50%;
+    margin: 0 auto; 
+}
+
+
+
+/* -----------------------DASHBOARD.HTML-------------------------------- */
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+.request{
+    padding-right: 24px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 2px;
+    transition: all 300ms ease-in-out;
+}
+a:hover{
+    border-bottom: 2px solid white ;
+}
+a:active{
+    position: relative;
+    top: 3px;
+
+}
+.main{
+display: flex;
+justify-content: space-between;
+}
+
+.rides-cont{
+    border: 4px solid white;
+    padding: 2px 4px 6px 20px;
+    margin-top: 40px;
+    height: 340px;
+    border-bottom: none;
+    border-right: none;
+    border-left:none ;
+    font-size: 14px;
+}
+.subnav{
+    margin: 0 80px 0 130px;
+    display: flex;
+    justify-content: space-between;
+}
+.accept{
+    text-align: right;
+    margin-right: 24px;
+}
+/* .main-dash-cont{
+    display: flex;
+    justify-content: space-between;
+} */
+.rideshare{
+font-size: 40px;
+text-align: center;
+}
+.booked{
+    font-size: 40px;
+    text-align: center;
+}
+.right{
+    border: 4px solid white;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    padding: 2px 4px 6px 12px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.main-left{
+    height: 300px;
+    width: 30%;
+    margin-top: 40px;
+    position: relative;
+    border: 2px solid white;
+    overflow-y: scroll;
+    margin-right: 120px;
+    border-radius: 12px;
+
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    height: 300px;
+    width: 30%;
+    margin-top: 40px;
+    position: relative;
+    border: 2px solid white;
+    overflow-y: scroll;
+    margin-left: 120px;
+    border-radius: 12px;
+}
+/* -----------------REQUEST RIDE------------------- */
+
+textarea{
+    background: transparent;
+    width: 320px;
+    border: 2px solid #e1e5ee;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    padding: 1.00rem;
+    background: none;
+    margin-bottom: 16px;
+    resize: none;
+}
+
+.req-form{
+    margin-left: 760px;
+    margin-top: 80px;
+    position: absolute;
+    height: 600px;
+    top: 40%;
+    width: 800px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 24, 69, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input[type = "date"]{
+    color: gray;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.pswlbl4{
+    width: 200px;
+    height: 60px;
+}
+.btn-div{
+    margin-right: 36px;
+    padding-right: 12px;
+}
+
+.error2{
+    font-size: 14px;
+    margin: 2px;
+}
+.move{
+    position: relative;
+    text-align: center;
+    right: 40px;
+    top: 24px;
+}

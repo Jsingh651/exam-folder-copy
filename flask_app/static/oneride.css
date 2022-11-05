@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&family=Quicksand:wght@400;600&family=Roboto:wght@400;700;900&display=swap');
+
+html, body { height: 100%; }
+
+body {
+    font-family: 'Abril Fatface', cursive;
+scroll-behavior: smooth 400;
+  margin: 0;
+  background-color: #030717;
+  color: white;
+}
+
+span { 
+  position: relative;
+  width: 1px;
+  height:1px;
+  background-color: white;
+  position: fixed;
+  animation-name: particleAnimation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+span::before{ 
+  position: absolute;
+  content: "";
+  width: 100px;
+  right: 1px;
+  top: 20;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+}
+
+span:nth-of-type(1) { bottom: 30%; animation-duration: 6s; }
+span:nth-of-type(2) { top: 50%; animation-duration: 5s; }
+span:nth-of-type(3) { top: 80%; animation-duration: 10s; }
+span:nth-of-type(4) { top: 10%; animation-duration: 12s; }
+
+@keyframes particleAnimation {
+	from {
+		left: -100px;
+	}
+	to {
+		left: calc(100% + 100px);
+	}
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    padding: 4px;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+.request{
+    padding-right: 24px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 2px;
+    transition: all 300ms ease-in-out;
+}
+a:hover{
+    border-bottom: 2px solid white ;
+}
+a:active{
+    position: relative;
+    top: 3px;
+
+}
+
+.def {
+    display: flex;
+    padding: 0 40x 0 40px;
+}
+.rem{
+    position: absolute;
+    left: 500px;
+}
+.main-cont{
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    margin-top: 80px;
+    top: 40%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(48, 113, 154, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+li{
+    list-style: none;
+}
+.spans{
+    background-color: transparent;
+}
+.div-links{
+    margin-top: 40px;
+}
+
+.divider{
+    width: 100%;
+    height: 900px;
+    margin-top: 800px;
+    background: rgba(48, 113, 154, 0.5);
+}
+
+.scroll{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+.scroll__icon{
+    position: absolute;
+    top: 820px;
+    left: 800px;
+    width: 20px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll__icon:after{
+    content: '';
+    width: 4px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    animation: scroll 1000ms infinite alternate-reverse;
+
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateY(3px);
+    }
+
+    100%{
+        transform: translateY(-3px);
+    }
+}
+
+.messagebox{
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    margin-top: 80px;
+    top: 140%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.4);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    overflow-y:scroll ;
+
+
+}
+.ride-msg{
+    margin-left:300px;
+    padding-top: 40px;
+}
+
+.message-box{
+    width: 50%;
+
+    height: 26px;
+    border: 2px solid #e1e5ee;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    background-color: #030717;
+    outline: none;
+    padding: 0.8rem;
+    position: relative;
+    top: 620px;
+    left: 400px;
+}
+.messagediv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y:scroll ;
+}
+.pswlbl3{
+    width: 140px;
+    height: 40px;
+    padding: 6px;
+    position: relative;
+    top: 680px;
+    left: 256px;
+    color: #ffffff;
+    border-radius: 12px;
+    border: none;
+    background-color: #060b23;
+    transition: all 400ms ease;
+}
+.pswlbl3:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #060b23;
+}
+.pswlbl3:active{
+    position: relative;
+    top: 684px;
+}
+
+.name-cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    /* margin-right: 400px; */
+}
+.name-mes{
+    margin-top: 0;
+    margin-left: 24px;
+}
+.mesmes{
+    margin-bottom: 4px;
+}

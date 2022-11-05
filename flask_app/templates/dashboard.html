@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    
+    <div class="navbar">
+        <h1>Welcome {{user.first_name}}</h1>
+        <ul>
+            <h3 class="request"><a href="/request/ride">Request Ride</a></h3>
+            <h3><a href="/logout">Logout</a></h3>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="left">
+            <h1 class="rideshare">Rideshare Requests</h1>
+            {% for no in no_driver %}
+            <div class="rides-cont">
+                <h2>Name: {{no.user.first_name}} </h2>
+                <h2>Pick Up: {{no.pick_up}}</h2>
+                <h2>Destination: {{no.destination}}<h2>
+                        <h3>When: {{no.created_at.strftime('%Y-%m-%d')}}</h3>
+                        {% if session['user_id'] == no.rider_id %}
+                        <h2 class="accept"><a href="/delete/{{no.id}}">Delete</a></h2>
+                        {% else %}
+                        <h2 class="accept"><a href="/update/ride/{{no.id}}">Accept</a></h2>
+                        {%endif%}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="main-left">
+            <h1 class="booked">Booked Rides</h1>
+            {% for r in rides %}
+            <div class="right">
+                {% if session['user_id'] == r.driver_id %}
+                <h4>You are driving {{r.user.first_name}} to {{r.destination}} on {{r.created_at.strftime('%b %-d')}}
+                    <div>
+                        <a href="/remove/driver/{{r.id}}">Cancel</a>
+                    </div>
+                    <a href="/details/{{r.id}}">Details</a>
+
+                </h4>
+
+                {%elif session['user_id'] == r.rider_id %}
+
+                <h4>You are riding with {{r.driver.first_name}} to {{r.destination}} on {{r.created_at.strftime('%b
+                    %-d')}}</h4>
+                    <div>
+                        <a href="/details/{{r.id}}">Details</a>
+
+                    </div>
+                {% else %}
+
+                <h4>{{r.driver.first_name}} is driving {{r.user.first_name}} to {{r.destination}} on
+                    {{r.created_at.strftime('%b %-d')}}</h4>
+                {%endif%}
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+
+</html>

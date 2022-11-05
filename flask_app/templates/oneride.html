@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'oneride.css')}}">
+</head>
+<body>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+    <div class="navbar">
+        <h1>Ready for your trip to {{one_ride.destination}}?</h1>
+        <ul>
+            <h3 class="request"><a href="/dashboard">Home</a></h3>
+            <h3><a href="/logout">Logout</a></h3>
+        </ul>
+    </div>
+    <div class="main-cont">
+
+        <div class="def">
+            <h1>Who's driving?</h1> 
+            <h1 class="rem">{{one_ride.driver.first_name}}</h1>
+        </div>
+        <div class="def">
+            <h1>Who's coming along? </h1> 
+            <h1 class="rem">{{one_ride.user.first_name}}</h1>
+        </div>
+        <div class="def">
+            <h1>Date: </h1> 
+            <h1 class="rem">{{one_ride.created_at.strftime('%b %-d')}}</h1>
+        </div>
+        <div class="def">
+            <h1>Pick Up Location: </h1> 
+            <h1 class="rem">{{one_ride.pick_up}}</h1>
+        </div>
+        <div class="def">
+            <h1>Details: </h1> 
+            <h1 class="rem">{{one_ride.details}}</h1>
+        </div>
+       
+    <div class="div-links">
+        <a class="links" href="/edit/route/{{one_ride.id}}">Edit |</a>
+        <a class="links" href="/delete/{{one_ride.id}}">Delete</a>
+    </div>
+    </div>
+        <div class="scroll__icon click"></div>
+
+    <div class="divider">
+        <h1 class="ride-msg">Ride messages</h1>
+        <div class="messagebox">
+            <form action="/message" method="POST">
+                <input type="hidden" name="ride_id" value="{{one_ride.id}}">
+                <div class="messagediv">
+                    {%for m in one_ride.messages %}
+                    <div class="name-cont">
+                        <h3 class="mesmes">{{m.message}}</h3>
+                        <h3 class="name-mes">- {{m.user.first_name}}</h3>
+                    </div>
+                
+                    {%endfor%}
+                </div>
+            </div>
+                <input class="message-box" type="text" name="message">
+                <input type="submit" class="pswlbl3 pswlbl4">
+            </form>
+        </div>
+        <section id="models"></section>
+
+</body>
+
+</html>

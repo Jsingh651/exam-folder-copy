@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Convergence&family=Lato:wght@300;400;700;900&family=Mukta:wght@300;400;600;700;800&family=Noto+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1 class="title">Ohana Rideshare</h1>
+    <div class="main-container">
+        <div class="form">
+            <h1>Register</h1>
+            <form action="/register/user" method="post">
+                <input name="email" type="text" autocomplete="off" placeholder="Email" value="{{session['email']}}">
+
+                <input name="first_name" class="fir" type="text" autocomplete="off" placeholder="First Name"
+                    value="{{session['first_name']}}">
+
+                <input name="last_name" class="lst" type="text" autocomplete="off" placeholder=" Last Name "
+                    value="{{session['last_name']}}">
+
+                <input name="password" class="pswlst" type="password" autocomplete="off" placeholder="Password ">
+
+                <input name="confirm_password" class="pswlst2" type="password" autocomplete="off"
+                    placeholder="Password ">
+
+                <input class="pswlbl3" type="submit" value="SUBMIT">
+            </form>
+        </div>
+        <div class="error-dav">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="error">{{message}}</p> 
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+
+        <div class="login-box">
+            <h1>Login</h1>
+            <form action="/login/user" method="post" class="formlogin">
+                <div class="user-box">
+                    <input type="email" name="email" required="" placeholder="Email" value="{{session['email']}}">
+                </div>
+                <div class="user-box">
+                    <input type="password" name="password" value="" required="" placeholder="Password">
+                </div>
+                <input class="pswlbl3 pswlbl2" type="submit" value="SUBMIT">
+                <div class="d">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
